@@ -89,14 +89,15 @@ while place_order:
             # Save the menu category name to a variable
             menu_category_name = menu_items[int(menu_category)]
             # Print out the menu category name they selected
-            print(f"You selected {menu_category_name}")
+            print(f"You selected {menu_category_name}\n")
 
             # Print out the menu options from the menu_category_name
-            print(f"What {menu_category_name} item would you like to order?")
+            print(f"What {menu_category_name} item would you like to order?\n")
+
             menu_items = {}
             print("Item # | Item name                | Price")
             print("-------|--------------------------|-------")
-            for key, value in enumerate(menu[menu_category_name].items(), 1):
+            for i, (key, value) in enumerate(menu[menu_category_name].items(), 1):
                 # Check if the menu item is a dictionary to handle differently
                 if type(value) is dict:
                     for key2, value2 in value.items():
@@ -107,6 +108,7 @@ while place_order:
                             "Item name": key + " - " + key2,
                             "Price": value2
                         }
+                        
                 else:
                     num_item_spaces = 24 - len(key)
                     item_spaces = " " * num_item_spaces
@@ -115,10 +117,10 @@ while place_order:
                         "Item name": key,
                         "Price": value
                     }
-                    i += 1
+                    
             # 2. Ask customer to input menu item number
             menu_selection = input(
-                "Please enter the item number of your selection.")
+                "Please enter the item number of your selection:  ")
 
             # 3. Check if the customer typed a number
             if menu_selection.isdigit():
@@ -126,14 +128,14 @@ while place_order:
                 menu_selection = int(menu_selection)
 
                 # 4. Check if the menu selection is in the menu items
-                print(menu_items.keys())
+                print(menu_items.keys()) # remove after testing
                 if menu_selection in menu_items.keys():
                     # Store the item name as a variable
                     item_name = menu_items[menu_selection]["Item name"]
 
                     # Ask the customer for the quantity of the menu item
                     item_quantity = input(
-                        f"How many {item_name}s would you like to order?")
+                        f"How many {item_name}s would you like to order?  ")
 
                     # Check if the quantity is a number
                     if item_quantity.isdigit():
