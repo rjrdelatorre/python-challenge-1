@@ -188,8 +188,8 @@ while place_order:
 print("This is what we are preparing for you.\n")
 
 # Uncomment the following line to check the structure of the order
-print('menu check: \n') # remove after testing
-print(order_list) # remove after testing
+# print('menu check: \n') # remove after testing
+# print(order_list) # remove after testing
 
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
