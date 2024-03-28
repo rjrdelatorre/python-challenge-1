@@ -140,6 +140,8 @@ while place_order:
                         item_quantity = int(item_quantity)
                     else:
                         # default to 1 if item_quantity is not a number
+                        print(f"You didn't enter a valid number, so your "
+                              f"selection has been defaulted to 1.")
                         item_quantity = 1
 
                     # Add the item name, price, and quantity to the order list
